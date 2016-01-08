@@ -1,0 +1,80 @@
+html, body{
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+body{
+  transform: scale(1.2);
+  transform-style: preserve-3d;
+}
+
+.cube{
+  /*margin: calc(10vh * 1.414213562373095 / 2 - 5vh);*/
+  margin: 0;
+  float: left;
+  width: 10vh;
+  height: 10vh;
+  transform-style: preserve-3d;
+
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotate3d(1, 0, 0, -45deg)
+             rotate3d(0, 1, 0, -45deg)
+             rotate3d(0, 0, 1, -45deg);
+  animation: rotateAnimation 10s linear 0.1s infinite alternate;
+}
+
+.cube div{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.999;
+}
+
+.left{
+  background-color: lightblue;
+  transform: translate3d(-50%, 0%, 0) rotateY(-90deg) translateX(-50%) rotateY(180deg);
+}
+
+.right{
+  background-color: red;
+  transform: translate3d(50%, 0%, 0) rotateY(-90deg) translateX(-50%) rotateY(180deg);
+}
+
+.front{
+  background-color: fuchsia;
+  /* don't delete !!! (solves transparence problem for non-transformed div)*/
+  transform: translate3d(50%, 0%, 0) translateX(-50%);
+}
+
+.back{
+  background-color: black;
+  transform: translate3d(0vh, 0vh, 0) rotateY(-90deg) translateX(-100%) rotateY(90deg);
+}
+
+.top{
+  background-color: green;
+  transform: translate3d(0%, -50%, 0) rotateY(-90deg) translateX(-50%) rotateY(90deg) rotateX(90deg);
+}
+
+.bottom{
+  background-color: beige;
+  transform: translate3d(0%, 50%, 0) rotateY(-90deg) translateX(-50%) rotateY(90deg) rotateX(90deg);
+}
+
+@keyframes rotateAnimation{
+
+    0% { transform: rotateX(-45deg) rotateY(-45deg) rotateZ(-45deg); }
+
+    20% { transform: rotateX(-45deg) rotateY(315deg) rotateZ(-45deg); }
+
+    40% { transform: rotateX(-45deg) rotateY(-45deg) rotateZ(-45deg); }
+
+    60% { transform: rotateX(315deg) rotateY(-45deg) rotateZ(-45deg); }
+
+    80% { transform: rotateX(-45deg) rotateY(-45deg) rotateZ(-45deg); }
+
+    100% { transform: rotateX(-45deg) rotateY(-45deg) rotateZ(315deg); }
+}
