@@ -10,24 +10,20 @@ body{
   transform-style: preserve-3d;
 }
 
-.cnt{
-    /*margin: calc(10vh * 1.414213562373095 / 2 - 5vh);*/
-    margin: 0;
-    float: left;
-    width: 10vh;
-    height: 10vh;
-    transform-style: preserve-3d;
-}
-
 .cube{
+  /*margin: calc(10vh * 1.414213562373095 / 2 - 5vh);*/
+  margin: 0;
+  float: left;
+  width: 10vh;
+  height: 10vh;
+  transform-style: preserve-3d;
+
   position: relative;
   transform-style: preserve-3d;
   transform: rotate3d(1, 0, 0, -45deg)
              rotate3d(0, 1, 0, -45deg)
              rotate3d(0, 0, 1, -45deg);
   animation: rotateAnimation 10s linear 0.1s infinite alternate;
-  width: 100%;
-  height: 100%;
 }
 
 .cube div{
